@@ -1,0 +1,15 @@
+<div>
+  <% form_for search do |f| %>
+    <%= f.label :first_name_like, t('first_name') %>
+    <%= f.text_field :first_name_like, :class => "text_field_small"  %>
+
+    <%= f.label :last_name_like, t('last_name') %>
+    <%= f.text_field :last_name_like, :class => "text_field_small"  %>
+
+    <%= f.label :email_like, t('email') %>
+    <%= f.text_field :email_like, :class => "text_field_small"  %>
+
+    <%= submit_tag t('do_search') %>
+
+  <% end %>
+</div>

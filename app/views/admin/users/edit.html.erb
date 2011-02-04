@@ -1,0 +1,21 @@
+<% if @user %>
+  <%= page_title @user.full_name %>
+
+  <div class="item_action_links">
+    <%= actions_with_icons(@user, default_actions_opt, "admin") %>
+  </div>
+
+  <div class="user_edit_form_container">
+  <% form_for [:admin, @user] do |f| %>
+
+    <div>
+      <%= f.error_messages %>
+    </div>
+
+    <%= render :partial => "form", :locals => {:f => f } %>
+
+  <% end %>
+
+<% else %>
+  <%= t('user.not_found') %>
+<% end %>

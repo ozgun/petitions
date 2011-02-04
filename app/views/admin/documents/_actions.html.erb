@@ -1,0 +1,5 @@
+<div class="page_actions">
+  <%= link_to t('details').capitalize, admin_document_path(document) %> |
+  <%= link_to t('edit').capitalize, edit_admin_document_path(document) %> |
+  <%= link_to t('delete').capitalize, admin_document_path(document), :method => :delete, :confirm => t('are_you_sure_delete') %>
+</div>

@@ -1,0 +1,6 @@
+<% initiate_tiny_mce %>
+<%= page_title t('page.new') %>
+
+<div class="span-24">
+  <%= render :partial => "form", :locals => {:page => @page, :page_categories => @page_categories} %>
+</div>

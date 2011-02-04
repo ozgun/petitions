@@ -1,0 +1,12 @@
+<%= page_title t('item.new', :item => @user.class.human_name) %>
+
+<div class="new_user_form_container">
+  <% form_for [:admin, @user] do |f| %>
+
+    <div>
+      <%= f.error_messages %>
+    </div>
+
+    <%= render :partial => "form", :locals => {:f => f } %>
+
+  <% end %>

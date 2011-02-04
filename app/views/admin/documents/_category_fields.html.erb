@@ -1,0 +1,38 @@
+<% categories.each_with_index do |category, index| %>
+
+  <% if f.object.new_record? %>
+
+    <div class="new_rec">
+      <%= check_box_tag "document[document_categories_attributes][][category_id]", category.id %><%= category.name %>
+    </div>
+
+  <% else %>
+    <div class="not_new">
+
+    <% if f.object.categories.map(&:id).include?(category.id) %>
+
+        <% dc = f.object.document_categories.find_by_category_id(category.id) %>
+
+        <%= image_tag "tick.png" %> <%= category.name %>
+
+        <span class="delete">
+          [<%= t('delete').capitalize %>
+          <input type="hidden" name="document[document_categories_attributes][<%= index %>][_destroy]" value="0" />
+          <input id="documet_document_categories_attributes_<%= index %>__destroy" name="document[document_categories_attributes][<%= index %>][_destroy]" type="checkbox" value="1" />
+          <input id="documet_document_categories_attributes_<%= index %>_id" name="document[document_categories_attributes][<%= index %>][id]" type="hidden" value="<%= dc.id %>" />
+          <%#= hidden_field_tag "document[document_categories_attributes][#{index}][_destroy]", 0 %>
+          <%#= check_box_tag "document[document_categories_attributes][#{index}}][id]", dc.id %>
+          ]
+        </span>
+
+    <% else %>
+      <%#= check_box_tag "document[document_categories_attributes][#{category.id}][category_id]", category.id %>
+      <%= check_box_tag "document[document_categories_attributes][#{index}][category_id]", category.id %>
+      <%= category.name %>
+    <% end %>
+
+    </div>
+
+  <% end %>
+
+<% end %>

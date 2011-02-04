@@ -1,0 +1,508 @@
+# Turkish translations for Ruby on Rails 
+# by Ozgun Ataman (ozataman@gmail.com)
+
+tr:
+  locale:
+    native_name: Türkçe
+    address_separator: " "
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      numeric: "%d.%m.%Y"
+      short: "%e %b"
+      long: "%e %B %Y, %A"
+      only_day: "%e"
+
+    day_names: [Pazar, Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi]
+    abbr_day_names: [Pzr, Pzt, Sal, Çrş, Prş, Cum, Cts]
+    month_names: [~, Ocak, Şubat, Mart, Nisan, Mayıs, Haziran, Temmuz, Ağustos, Eylül, Ekim, Kasım, Aralık]
+    abbr_month_names: [~, Oca, Şub, Mar, Nis, May, Haz, Tem, Ağu, Eyl, Eki, Kas, Ara]
+    order: [ :day, :month, :year ]
+  
+  time:
+    formats:
+      default: "%a %d.%b.%y %H:%M"
+      numeric: "%d.%b.%y %H:%M"
+      short: "%e %B, %H:%M"
+      long: "%e %B %Y, %A, %H:%M"
+      time: "%H:%M"
+
+    am: "öğleden önce"
+    pm: "öğleden sonra"
+      
+  datetime:
+    distance_in_words:
+      half_a_minute: 'yarım dakika'
+      less_than_x_seconds:
+        zero: '1 saniyeden az'
+        one: '1 saniyeden az'
+        other: '{{count}} saniyeden az'
+      x_seconds:
+        one: '1 saniye'
+        other: '{{count}} saniye'
+      less_than_x_minutes:
+        zero: '1 dakikadan az'
+        one: '1 dakikadan az'
+        other: '{{count}} dakikadan az'
+      x_minutes:
+        one: '1 dakika'
+        other: '{{count}} dakika'
+      about_x_hours:
+        one: '1 saat civarında'
+        other: '{{count}} saat civarında'
+      x_days:
+        one: '1 gün'
+        other: '{{count}} gün'
+      about_x_months:
+        one: '1 ay civarında'
+        other: '{{count}} ay civarında'
+      x_months:
+        one: '1 ay'
+        other: '{{count}} ay'
+      about_x_years:
+        one: '1 yıl civarında'
+        other: '{{count}} yıl civarında'
+      over_x_years:
+        one: '1 yıldan fazla'
+        other: '{{count}} yıldan fazla'
+      almost_x_years:
+        one:   "neredeyse 1 yıl"
+        other: "neredeyse {{count}} yıl"
+      
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'TL'
+        format: '%n %u'
+        separator: ','
+        delimiter: '.'
+        precision: 2
+    percentage:
+      format:
+        delimiter: '.'
+        separator: ','
+        precision: 2
+    precision:
+      format:
+        delimiter: '.'
+        separator: ','
+    human:
+      format:
+        delimiter: '.'
+        separator: ','
+        precision: 2
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Byte"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
+  support:
+    select:
+      # default value for :prompt => true in FormOptionsHelper
+      prompt: "Lütfen seçiniz"
+    array:
+      sentence_connector: "ve"
+      skip_last_comma: true
+      words_connector: ", "
+      two_words_connector: " ve "
+      last_word_connector: " ve "
+
+  default_model:
+    model: Model
+    models: Modeller
+    new: Yeni Model
+    show: Modeli Göster
+    edit: Modeli Düzenle
+    update: Modeli Güncelle
+    delete: Modeli Sil
+    created: Model oluşturuldu.
+    list: Modelleri Listele
+    saved: Model kaydedildi.
+    updated: Model güncellendi.
+    deleted: Model silindi.
+    not_created: Model silinemedi!
+    not_saved: Model kaydedilemedi!
+    not_updated: Model güncellenemedi!
+    not_deleted: Model silinemedi!
+    not_found: Model bulunamadı!
+    details: Model Detayı
+        
+  activerecord:
+    models:
+      user: "Kullanıcı"
+      page: "Sayfa"
+      category: "Kategori"
+      document: "Belge"
+      sample: "Örnek"
+    attributes:
+      user:
+        email: Eposta
+        login: Kullanıcı adı
+        first_name: İsim
+        last_name: Soyisim
+        password: Parola
+        password_confirmation: Parola teyidi
+        company_name: Firma
+        phone: Sabit Telefon Numarası
+        gsm_no: GSM Numarası
+        website: Web Sitesi
+        address: İş/Ev Adresi
+      asset:
+        description: Açıklama
+        metadata_file_name: Dosya Adı
+        metadata_content_type: Dosya tipi
+        metadata_file_size: Dosya boyutu
+        tag: Etiket
+      page:
+        title: Başlık
+        body: İçerik
+        post_category_id: Kategori id
+        slogan: Slogan
+        category_main_page: Kategori ana sayfası
+        home_page: Ana Sayfa
+        icon: Ikon
+        icon_file_name: Dosya Adı
+        icon_content_type: Dosya tipi
+        icon_file_size: Dosya boyutu
+        banner: Banner
+        banner_file_name: Dosya Adı
+        banner_content_type: Dosya tipi
+        banner_file_size: Dosya boyutu
+        position: Sıra
+      category:
+        name: "Kategori Adı"
+        position: "Sırası"
+        section_identifier: "Bölüm"
+      document:
+        name: "Belge Adı"
+        position: "Sırası"
+        section_identifier: "Bölüm"
+      sample:
+        html: "HTML Formatı"
+        
+    errors:
+      template:
+        header:
+          one:    "{{model}} girişi kaydedilemedi: 1 hata."
+          other:  "{{model}} girişi kaydedilemedi: {{count}} hata."
+        body: "Lütfen aşağıdaki hataları düzeltiniz:"
+
+      messages:
+        inclusion: "kabul edilen bir kelime değil"
+        exclusion: "kullanılamaz"
+        invalid: "geçersiz"
+        confirmation: "teyidiyle uyuşmamakta"
+        accepted: "kabul edilmeli"
+        empty: "doldurulmalı"
+        blank: "doldurulmalı"
+        too_long: "çok uzun (en fazla {{count}} karakter)"
+        too_short: "çok kısa (en az {{count}} karakter)"
+        wrong_length: "yanlış uzunlukta (tam olarak {{count}} karakter olmalı)"
+        taken: "hali hazırda kullanılmakta"
+        not_a_number: "geçerli bir sayı değil"
+        greater_than: "{{count}} sayısından büyük olmalı"
+        greater_than_or_equal_to: "{{count}} sayısına eşit veya büyük olmalı"
+        equal_to: "tam olarak {{count}} olmalı"
+        less_than: "{{count}} sayısından küçük olmalı"
+        less_than_or_equal_to: "{{count}} sayısına eşit veya küçük olmalı"
+        odd: "tek olmalı"
+        even: "çift olmalı"
+        record_invalid: "Doğrulama başarısız oldu: {{errors}}"
+      models:
+      full_messages:
+        format: "{{attribute}} {{message}}"
+  authlogic:
+    error_messages:
+      login_blank: doldurulmalı
+      login_not_found: geçerli değil
+      login_invalid: sadece harf, rakam, boşluk, ve _@ işaretini içerebilir.
+      consecutive_failed_logins_limit_exceeded: Çok fazla hatalı girşi denemesi olduğu için hesabınız durduruldu.
+      email_invalid: geçersiz.
+      password_blank: doldurulmalı.
+      password_invalid: geçersiz.
+      not_active: Hesabınız aktif değil. Lütfen size gelen aktivasyon epostasındaki adımları takip ediniz.
+      not_confirmed: Hesap durdurulmuş.
+      not_approved: Hesabınız henüz onaylanmadı
+      no_authentication_details: Gerekli bilgileri girmediniz.
+    models:
+      user_session: UserSession or whatever name you are using
+    attributes:
+      user_session:
+        login: kullanıcı adı
+        email: eposta
+        password: parola
+        remember_me: beni hatırla
+  welcome: Hoşgeldiniz
+  auth:
+    login: Giriş
+    logout: Çıkış
+    signup: Kayıt
+    sign_up: Kayıt Ol
+    registration: Üyelik
+    access_denied: Giriş başarısız, lütfen tekrar deneyiniz.
+    logout_ok: Sistemden başarıyla çıkış yaptınız.
+    remember_me: Beni hatırla
+    password: Parola
+    password_confirmation: Parola (tekrar)
+    new_password: Yeni Parola
+    new_password_confirmation: Yeni Parola (tekrar)
+    reset_password: Şifremi değiştir
+    forgot_password: Şifremi unuttum
+    reset_password_description: Şifrenizi değiştirmeniz için eposta adresinize bir link gönderilecektir. Bu linki tıklayarak şifrenizi değiştirebilirsiniz.
+    password_reset_instructions_sent: Şifre değişikliğinin nasıl yapılabileceğine dair bir mesaj eposta adresinize gönderilmiştir
+    password_reset_instructions_not_sent: Hata. Şifre değişikliği mesajı eposta adresinize gönderilemedi.
+    password_reset_user_not_found: Kullanıcı bulunamadı.
+    password_updated: Şifre güncellendi.
+    password_not_updated: Şifre güncellenemedi!
+    account_created: Hesabınız oluşturuldu. Hesabınızı aktif hale getirmek için eposta adresinize gönderilen aktivasyon mesajındaki adımları takip ediniz.
+    account_activated: Hesabınız aktive edildi.
+    account_not_activated: Hesap aktive edilemedi.
+    account_suspended: Hesap geçici olarak durdurulmuş durumda.
+    recaptcha_label: Lütfen resimde gördüğünüz harfleri yandaki kutucuğa yazınız.
+    already_activated: Hesabınız daha önce aktive edilmiş.
+    login_count: Sisteme giriş sayısı
+    failed_login_count: Hatalı giriş sayısı
+    last_request_at: En son işlem tarihi
+    current_login_at: Sisteme giriş tarihi
+    last_login_at: En son giriş tarihi
+    current_login_ip: Sisteme giriş yaptığı IP
+    last_login_ip: En son sisteme giriş yaptığı IP
+    password_opt: Parolayı değiştirmek istemiyorsanız boş bırakın
+  user:
+    user: Kullanıcı
+    updated: Kullanıcı bilgileri güncellendi
+    not_updated: Kullanıcı bilgileri güncellenemedi!
+    not_found: Kullanıcı bulunamadı
+    edit: Kullanıcı bilgilerini düzenle
+    udpate: Kullanıcı bilgilerini Güncelle
+    delete: Kullanıcıyı sil
+    destroy: Kullanıcıyı sil
+    add: Kullanıcı ekle
+    new: Yeni kullanıcı
+    show: Kullanıcı Detayları
+    details: Kullanıcı Detaylar
+    suspension_status: Hesabın Durumu
+    activation_status: Aktivasyon Durumu
+    account_info: Hesap Bilgileri
+    login_stats: Sisteme Giriş İstatistikleri
+    suspended: Kullanıcı hesabı durduruldu
+    unsuspended: Kullanıcı hesabı kullanıma açıldı
+    deleted: Kullanıcı silindi
+    not_deleted: Kullanıcı silinemedi
+    admin_cant_be_deleted: Güvenlik sebebiyle yöneticiler sistemden silinemez. Lütfen sistem yöneticisine danışınız.
+    first_name: İsim
+    last_name: Soyisim
+    full_name: İsim Soyisim
+    email: Eposta
+    company_name: Firma
+    phone: Sabit Telefon Numarası
+    gsm_no: GSM Numarası
+    website: Web Sitesi
+    address: İş/Ev Adresi
+  my_account:
+    my_account: Hesabım
+    update: Bilgilerimi Güncelle
+    updated: Bilgiler güncellendi.
+    not_updated: Bilgiler güncellenemedi!
+  admin_menu:
+    home: Başlangıç
+    site: Siteye Git
+    users: Kullanıcılar
+    pages: Sayfalar
+    main_page: Ana Sayfa
+  asset:
+    uploaded: Dosya yüklendi
+    upload: Dosya yükle
+    not_uploaded: Dosya yüklenemedi!
+    new: Dosya yükle
+    delete: Dosyayı sil
+    list: Dosyalar
+    name: Dosyanın adı
+    asset: "Dosya"
+    assets: "Dosyalar"
+    created_at: Yüklendiği Tarih
+    description: Açıklama
+    link: Link
+    content_type: Dosya Tipi
+    file_size: Dosya Boyutu
+    deleted: Dosya silindi
+    not_deleted: Dosya silinemedi
+    not_found: "Dosya bulunamadı!"
+    tag: Etiket
+  page:
+    management: Sayfa Yönetimi
+    page: Sayfa
+    pages: Sayfalar
+    title: Başlık
+    body: İçerik
+    position: Sıra
+    position_desc: Menüde hangi sırada gösterileceği
+    new: Yeni Sayfa
+    edit: Sayfayı Güncelle
+    delete: Sayfayı Sil
+    created: Sayfa oluşturuldu.
+    saved: Sayfa oluşturuldu.
+    not_saved: Sayfa kaydedilemedi!
+    not_created: Sayfa oluşturulamadı!
+    updated: Sayfa güncellendi.
+    not_updated: Sayfa güncellenemedi!
+    deleted: Sayfa silindi.
+    not_deleted: Sayfa silinemedi!
+    not_found: Sayfa bulunamadı!
+    icon: İkon
+    slogan: Slogan
+    banner: Banner
+    all: Tüm Safyalar
+    home_page: Ana Sayfa
+    link: Sayfa Linki
+  address:
+    full_name: Ad ve Soyad
+    company_name: Firma
+    phone: Sabit Telefon Numarası
+    gsm_no: GSM Numarası
+    email: E-posta Adresi
+    website: Web Sitesi
+    street_address: İş/Ev Adresi
+  category:
+    category: "Kategori"
+    categories: "Kategoriler"
+    section: "Bölüm"
+    section_identifier: "Bölüm"
+  document:
+    document: "Belge"
+    documents: "Belgeler"
+    all: "Tüm Belgeler"
+    name: "Belgenin Adı"
+    position: "Sırası"
+    publish_status: "Yayın Durumu"
+    is_publish: "Yayınlansın mı?"
+    details: "Belge Detayları"
+    edit: "Belge Düzenle"
+    not_found: "Aradığınız belge bulunamadı!"
+    documents_not_found: "Belge bulunamadı!"
+    click_to_download: "Dosyayı bilgisayarınıza indirmek için tıklayınız."
+  sample:
+    sample: "Örnek"
+    samples: "Örnekler"
+    html: "HTML Formatı"
+    position: "Sırası"
+  petition: "Dilekçe"
+  petitions: "Dilekçeler"
+  agreement: "Sözleşme"
+  agreements: "Sözleşmeler"
+  other_document: "Diğer Yazışma"
+  other_documents: "Diğer Yazışmalar"
+  written_warning: "İhtarname"
+  written_warnings: "İhtarnameler"
+  voucher: "İbraname"
+  vouchers: "İbranameler"
+
+  email: Eposta
+  e_mail: E-posta
+  phone: Telefon
+  fax: Faks
+  home_page: "Ana Sayfa"
+  contact: "İletişim"
+  homepage: "Ana Sayfa"
+  first_name: İsim
+  last_name: Soyisim
+  full_name: İsim Soyisim
+  full_name2: Ad Soyad
+  website: Web Sitesi
+  company: Firma
+  active: Aktif
+  not_active: Aktif değil
+  inactive: Aktif değil
+  suspended: Durdurulmuş
+  unsuspended: Kullanımda
+  account_status: Hesabın Durumu
+  suspend: Hesabı durdur
+  unsuspend: Hesabı kullanıma aç
+  registration_date: Kayıt Tarihi
+  edit: Düzenle
+  udpate: Güncelle
+  delete: Sil
+  destroy: Sil
+  add: Ekle
+  new: Yeni
+  show: Göster
+  save: Kaydet
+  cancel: Vazgeç
+  details: Detay
+  are_you_sure: "Emin misiniz?"
+  are_you_sure_delete: "Silmek istediğinize emin misiniz?"
+  role: Rol
+  admin: Yönetici
+  select_file: Dosya seçiniz
+  search: Arama
+  perform_search: Ara
+  do_search: Ara
+  preview: Önizleme
+  title: Başlık
+  created_at: "Kayıt Tarih"
+  status: Durumu
+  description: Açıklama
+  example: Örnek
+  deleted: Silindi.
+  not_deleted: Silinemedi!
+  record_not_found: Kayıt bulunamadı!
+  published: "Yayında"
+  not_published: "Yayında değil"
+  is_published: Yayında mı?
+  send: Gönder
+  mr: Sayın
+  requested_page_not_found: Aradığınız sayfa bulunamadı!
+  pagination_pre: Önceki
+  pagination_next: Sonraki
+  today: Bugün
+  tomorrow: Yarın
+  hour: Saat
+  thank_you: Teşekkür ederiz.
+  error: Hata
+  help: Yardım
+  continue: Devam
+  phone_invalid: Sadece rakamlardan oluşmalı!
+  purchase: Satın Al
+  age: Yaş
+  gender: Cinsiyet
+  man: Bay
+  woman: Bayan
+  male: Erkek
+  female: Kadın
+  social_icons:
+    twitter: "Twitter'da paylaş"
+    facebook: "Facebook'a kaydet"
+    digg: "Digg'e kaydet"
+    delicious: "Delicious'a ekle"
+    reddit: "Reddit'te paylaş"
+  do_select: "Seçiniz"
+  not_found: "Kayıt bulunamadı"
+  links: "Bağlantılar"
+
+  item:
+    saved: "{{item}} kaydedildi."
+    not_saved: "{{item}} kaydedilemedi!"
+    created: "{{item}} oluşturuldu."
+    not_created: "{{item}} oluşturulamadı!"
+    updated: "{{item}} güncellendi."
+    not_updated: "{{item}} güncellenemedi!"
+    deleted: "{{item}} silindi."
+    not_deleted: "{{item}} silinemedi!"
+    destroyed: "{{item}} silindi."
+    not_destroyed: "{{item}} silinemedi!"
+    new: "Yeni {{item}}"
+    add: "{{item}} Ekle"
+    edit: "{{item}} Düzenle"
+    delete: "{{item}} Sil"
+    show: "{{item}} Göster"
+    details: "{{item}} Detayı"

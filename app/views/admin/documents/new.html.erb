@@ -1,0 +1,9 @@
+<h2><%= t('item.new', :item => t('document.document')) %></h2>
+
+<% form_for([:admin, @document]) do |f| %>
+  <%= f.error_messages %>
+  <table class="simple_table">
+    <%= render "form", :f => f %>
+  </table>
+<% end %>
+

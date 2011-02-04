@@ -1,0 +1,10 @@
+<% if flash[:notice] or flash[:error] %>
+  <div id="notification" class="span-24 last">
+    <% if flash[:notice] %>
+      <p class="success"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+  </div>
+<% end %>

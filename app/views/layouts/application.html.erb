@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <%#= site_settings.after_head_open %>
+  <title><%= yield(:title) %>Dilekçeler, Sözleşmeler, İhtarnameler ve İbranameler</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <meta name="description" content="Dilekçeler, Sözleşmeler, İhtarnameler, İbranameler" />
+  <meta name="keywords" content="Dilekçeler, Sözleşmeler, İhtarnameler, İbranameler" />
+  <meta name="language" content="turkish, TR">
+  <meta name="distribution" content="Global">
+  <meta name="Pragma" content="no-cache">
+  <meta name="AUTHOR" content="Dilekçeler, Sözleşmeler, İhtarnameler, İbranameler">
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+  <meta http-equiv="cache-control" content="no-cache">
+
+  <% if false %>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Dilekçeler ve Sözleşmeler" href="/main.rss"/>
+  <% end %>
+
+
+  <%#= site_settings.meta_tags %>
+
+  <%= render :partial => "/shared/blueprint_css" %>
+  <%# Cache'lenmiş js'ler değiştirdikten sonra cache doysasını silmeyi unutma. %>
+  <%= stylesheet_link_tag 'main', 'social_icons', :cache => true %>
+  <!-- jquery themes css -->
+  <%# aşağıdaki cache'leyince sorun çıkıyor!  %>
+  <%= stylesheet_link_tag 'jquery/themes/base/jquery.ui.all' %>
+
+  <%# Cache'lenmiş js'ler değiştirdikten sonra cache doysasını silmeyi unutma. %>
+  <%= javascript_include_tag "jquery-1.4.4.min", "jquery-ui-1.8.7.custom.min", "jrails", :cache => true %>
+  <%= javascript_include_tag "application" %>
+  <%= yield(:heads) %>
+  <%#= site_settings.before_head_close %>
+</head>
+
+<body>
+  <%#= site_settings.after_body_open %>
+
+  <!-- container baslar -->
+  <div class="container" id="container">
+    
+    <!-- header -->
+    <div id="header" class="span-24 last">
+      <%#= site_settings.header %>
+      <%= render "shared/header" %>
+    </div> <!-- #header biter -->
+
+    <!-- main  -->
+    <div id="content" class="span-17 colborder">
+      <div class="prepend-1">
+        <%# hata/uyarı mesajları %>
+        <%= render "shared/notification" %>
+        <%= yield %>&nbsp;
+      </div>
+    </div><!-- #main biter -->
+
+    <div id="sidebar" class="span-6 last">
+      <%= render "shared/sidebar" %>
+    </div><!-- #sidebar biter -->
+
+    <!-- footer_container -->
+    <div id="footer" class="span-24 last">
+      <%= render "shared/footer" %>
+    </div><!-- #footer_container biter -->
+
+  </div><!-- #container biter -->
+
+  <!-- Google analytics code -->
+  <%= render "shared/google_analytics" %>
+
+  <%#= site_settings.before_body_close %>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jquery.effects.blind.min" %>
+  <%= javascript_include_tag "jquery.ui.mouse.min" %>
+	<%= javascript_include_tag "jquery.ui.draggable.min" %>
+	<%= javascript_include_tag "jquery.ui.position.min" %>
+	<%= javascript_include_tag "jquery.ui.resizable.min" %>
+	<%= javascript_include_tag "jquery.ui.dialog.min" %>
+<% end %>
+<%= page_title "#{t('asset.assets')} (<span id=\"asset_count\">#{@asset_count}</span>)" %>
+
+<div class="span-24 last">
+  <div class="span-20">
+    <%= render :partial => "search", :locals => {:search => @search} %>
+  </div>
+  <div class="span-4 last tright">
+    <%= link_to_function image_tag("add.png"), "$('#asset_upload_form_container').toggle('blind');" %>
+    <%= link_to_function t('asset.new'), "$('#asset_upload_form_container').toggle('blind');" %>
+  </div>
+</div>
+
+<div id="asset_upload_form_container" class="slidedown_form span-24 last">
+  <%= render :partial => "form", :locals => {:asset => Asset.new} %>
+</div>
+
+<hr />
+
+<div id="assets_container">
+
+  <% unless @assets.empty? %>
+    <table class="grid_table">
+      <%= render :partial => "table_headers", :locals => {:search => @search} %>
+      <tbody>
+        <%= render :partial => @assets %>
+      </tbody>
+    </table>
+  <% else %>
+    <%= t('asset.not_found') %>
+  <% end %>
+</div>
+
+<div class="pagination">
+  <%= will_paginate_custom @assets %>
+</div>

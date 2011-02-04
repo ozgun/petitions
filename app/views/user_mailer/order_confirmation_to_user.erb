@@ -1,0 +1,41 @@
+Sayın <%= @user.full_name %>,
+
+= Sipariş Bilgileri =
+
+== Paket Bilgileri ==
+
+<%= product_info_for_email(@line_items, @order) %>
+
+== Üyelik Bilgileri ==
+
+<%= user_info_for_email(@order.user) %>
+
+== Fatura Bilgileri ==
+
+<%= invoice_info_for_email(@order.invoice_info) %>
+
+== Reklam Bilgileri ==
+
+<% if @product_form.product.google? -%>
+<%= google_ad_info_for_email(@product_form) -%>
+<% elsif @product_form.product.mynet? -%>
+<%= mynet_ad_info_for_email(@product_form) -%>
+<% elsif @product_form.product.facebook? -%>
+<%= facebook_ad_info_for_email(@product_form) -%>
+<% elsif @product_form.product.seo? -%>
+<%= seo_ad_info_for_email(@product_form) -%>
+<% end %>
+
+<% if @payment.credit_card? -%>
+  <%#= kredi kartı -%>
+<% elsif @payment.wire_transfer? -%>
+== Banka Hesap Bilgileri ==
+
+<%= bank_info_for_email %>
+<% end -%>
+
+NOT: Sipariş durumunu Müşteri Paneli'nden takip edebilirsiniz.
+
+Saygılarımıza,
+
+<%= EMAIL_BANNER %>

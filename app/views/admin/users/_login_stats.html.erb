@@ -1,0 +1,41 @@
+<div class="table_title">
+  <%= t('user.login_stats') %>
+</div>
+<table class="item_table">
+    <tr>
+      <th><%= t('auth.login_count') %></th>
+      <td><%= user.login_count || "" %></td>
+    </tr>
+
+    <% if false %>
+      <tr>
+        <th><%= t('auth.failed_login_count') %></th>
+        <td><%= user.failed_login_count || "" %></td>
+      </tr>
+    <% end %>
+
+    <tr>
+      <th><%= t('auth.last_request_at') %></th>
+      <td><%= user.last_request_at || "" %></td>
+    </tr>
+
+    <tr>
+      <th><%= t('auth.current_login_at') %></th>
+      <td><%= user.current_login_at || "" %></td>
+    </tr>
+
+    <tr>
+      <th><%= t('auth.last_login_at') %></th>
+      <td><%= user.last_login_at || "" %></td>
+    </tr>
+
+    <tr>
+      <th><%= t('auth.current_login_ip') %></th>
+      <td><%= user.current_login_ip || "" %></td>
+    </tr>
+
+    <tr>
+      <th><%= t('auth.last_login_ip') %></th>
+      <td><%= user.last_login_ip || "" %></td>
+    </tr>
+</table>

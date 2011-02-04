@@ -1,0 +1,36 @@
+= Sipariş Bilgileri =
+
+<%= order_details_for_email(@order) %>
+
+== Paket Bilgileri ==
+
+<%= product_info_for_email(@line_items, @order) %>
+
+== Üyelik Bilgileri ==
+
+<%= user_info_for_email(@order.user) %>
+
+== Fatura Bilgileri ==
+
+<%= invoice_info_for_email(@order.invoice_info) %>
+
+== Reklam Bilgileri ==
+
+<% if @product_form.product.google? -%>
+<%= google_ad_info_for_email(@product_form) -%>
+<% elsif @product_form.product.mynet? -%>
+<%= mynet_ad_info_for_email(@product_form) -%>
+<% elsif @product_form.product.facebook? -%>
+<%= facebook_ad_info_for_email(@product_form) -%>
+<% elsif @product_form.product.seo? -%>
+<%= seo_ad_info_for_email(@product_form) -%>
+<% end %>
+
+== Ödeme Yöntemi ==
+<% if @payment.credit_card? -%>
+Kredi kartı ile ödeme yapıldı/yapılacak.
+<% elsif @payment.wire_transfer? -%>
+Banka Havalesi/EFT ile ödeme yapılacak.
+<% end -%>
+
+<%= EMAIL_BANNER %>

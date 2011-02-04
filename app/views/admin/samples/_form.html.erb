@@ -1,0 +1,34 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "ckeditor/ckeditor" %>
+<% end %>
+<tr>
+  <td colspan="2">
+    <%= f.label :html, t('sample.html') %>
+  </td>
+</tr>
+<tr>
+  <td colspan="2">
+    <%= f.text_area :html, :class => "ckeditor"  %>
+  </td>
+</tr>
+
+<tr>
+  <td class="lft">
+    <%= f.label :position, t('sample.position') %>
+  </td>
+  <td class="rgt">
+    <%= f.text_field :position, :size => 2 %>
+  </td>
+</tr>
+
+<% f.object.assets.each do |asset| %>
+  <% f.fields_for :assets, asset do |af| %>
+    <%= render "asset_fields", :f => af %>
+  <% end %>
+<% end %>
+
+<tr>
+  <td colspan="2" class="submit">
+    <%= f.submit t('save') %>
+  </td>
+</tr>

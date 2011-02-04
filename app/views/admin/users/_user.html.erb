@@ -1,0 +1,24 @@
+<tr id="user_<%= user.id%>" class="<%= cycle_row %>">
+  <td>
+    <%= link_to h(user.full_name || ""), admin_user_path(user) %>
+    <%= admin_indicatior_icon(user) %>
+  </td>
+  <td>
+    <%= link_to h(user.email), admin_user_path(user) %>
+  </td>
+  <% if false %>
+    <%# Kullanıcılar paket alırken hesap oluşturulduğu için buna şimdilik gerek yok. %>
+    <td>
+      <%= activation_status_icon(user) %>
+    </td>
+  <% end %>
+  <td>
+    <%= suspension_status_icon(user) %>
+  </td>
+  <td>
+    <%= user.created_at %>
+  </td>
+  <td style="text-align: right">
+    <%= actions_with_icons(user, {:show => true, :edit => true, :delete => true}, "admin") %>
+  </td>
+</tr>

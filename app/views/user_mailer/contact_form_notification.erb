@@ -1,0 +1,27 @@
+Form: <%= @contact_form_datum.contact_form ? @contact_form_datum.contact_form.title : "" -%>
+Firma: <%= h(@contact_form_datum.company || "") %>
+Ad Soyad: <%= h(@contact_form_datum.full_name || "") %>
+Eposta: <%= h(@contact_form_datum.email || "") %>
+Telefon: <%= h(@contact_form_datum.phone || "") %>
+Websitesi: <%= h(@contact_form_datum.website || "") %>
+Aramaya uygun zaman: <%= h(@contact_form_datum.available_at || "") %>
+
+Mesaj:
+
+<%= @contact_form_datum.message || "" %>
+<%# Giden mail html formatında olmadığı için simple_format ve h'ye gerek yok. -%>
+<%#= h(simple_format(@contact_form_datum.message || "")) -%>
+
+------------------------
+
+Mesajı aşağıdaki linkten de görebilirsiniz:
+
+<%= url_for admin_contact_form_datum_url(@contact_form_datum) %>
+
+Tüm mesajları görmek için: 
+
+<%= url_for admin_contact_form_data_url %>
+
+------------------------
+
+<%= ADMIN_EMAIL_BANNER %>

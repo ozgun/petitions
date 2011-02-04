@@ -1,0 +1,38 @@
+<%= page_title "Kullanıcılar(#{@user_count})" %>
+
+<div class="span-24 users_container">
+
+  <div class="span-24 last">
+    
+  <div class="span-18">
+    <%= render :partial => "search", :locals => {:search => @search} %>
+  </div>
+
+  <div class="span-6 last tright sub_menu_container">
+    <ul class="sub_menu">
+      <li>
+        <%= link_to image_tag("add.png"), new_admin_user_path %>
+        <%= link_to t('item.new', :item => t('user.user')), new_admin_user_path %>
+      </li>
+    </ul>
+  </div>
+
+  </div>
+
+  <table class="grid_table">
+
+  <!-- table başlığı -->
+  <%= render :partial => "table_headers" %>
+
+  <!-- kullanıcılar -->
+  <tbody>
+    <%= render :partial => @users %>
+  </tbody>
+
+  </table>
+
+</div>
+
+<div class="span-24 pagination">
+  <%= will_paginate_custom @users %>
+</div>

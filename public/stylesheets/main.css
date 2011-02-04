@@ -1,0 +1,55 @@
+body {
+  background-color: #ddd;
+}
+#container {
+  background-color: #fff;
+}
+#header {
+}
+#header h1 {
+}
+#header h1 a{
+  text-decoration:none;
+  color: black;
+}
+#content {
+  background-color: #fff;
+}
+#sidebar {
+  /*background-color: #ccc;*/
+}
+#footer {
+  text-align: center;
+  background: #ccc;
+}
+#banners {
+}
+#sidebar #categories {
+}
+
+.title {
+}
+.pagination {
+  text-align: center;
+}
+
+.document {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.document_category {
+  text-align: left;
+}
+.category_horiz {
+  text-align: right;
+}
+.tright {
+  text-align: right
+}
+.html_format {
+  width: 580px;
+  overflow: auto;
+}
+.html_format tr.even { color: #fff}
+.html_format tbody tr:nth-child(even) td, tbody tr.even td {background: #fff;}

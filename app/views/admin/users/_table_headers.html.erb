@@ -1,0 +1,24 @@
+<thead>
+  <tr>
+    <th style="width: 250px">
+      <%= order @search, :by => :first_name, :as => t('full_name') %>
+    </th>
+    <th style="width: 300px">
+      <%= order @search, :by => :email, :as => t('email') %>
+    </th>
+    <% if false %>
+      <th style="width: 50px">
+        <%= order @search, :by => :active, :as => t('active') %>
+      </th>
+    <% end %>
+    <th style="width: 100px">
+      <%= order @search, :by => :suspended, :as => t('account_status') %>
+    </th>
+    <th style="width: 125px; ">
+      <%= order @search, :by => :created_at, :as => t('registration_date') %>
+    </th>
+    <th>
+     &nbsp; 
+    </th>
+  </tr>
+</thead>

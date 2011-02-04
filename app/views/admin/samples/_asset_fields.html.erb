@@ -1,0 +1,22 @@
+<% if f.object.new_record? %>
+  <tr>
+    <td class="lft">
+      <%= f.label :metadata, t('select_file') %>
+    </td>
+    <td class="rgt">
+      <%= f.file_field :metadata %>
+    </td>
+  </tr>
+<% else %>
+  <tr>
+    <td class="lft">
+      <%= t('asset.asset') %>
+    </td>
+    <td class="rgt">
+      <%= link_to f.object.file_name, f.object.url %>
+      <span class="delete">
+        [<%= t('delete').capitalize %><%= f.check_box :_destroy %>]
+      </span>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,14 @@
+<div>
+  <% form_for search do |f| %>
+    <%= f.label :title_like, t('page.title') %>
+    <%= f.text_field :title_like, :class => "text_field_small"  %>
+
+    <%#= f.label :page_category_name_like, t('page_category.name') %>
+    <%#= f.text_field :page_category_name_like, :class => "text_field_small"  %>
+    <%= f.label :page_category_name_is, t('page_category.name') %>
+    <%= f.select :page_category_name_is, PageCategory.ascend_by_name.map{|pc| [pc.name]}, :include_blank => t('page_category.all') %>
+
+    <%= submit_tag t('do_search') %>
+
+  <% end %>
+</div>

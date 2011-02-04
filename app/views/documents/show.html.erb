@@ -1,0 +1,35 @@
+<h2 class="title">
+  <% if @document %>
+    <%= title(@document.name) %>
+  <% end %>
+</h2>
+
+<div class="page_container">
+
+  <% if @document %>
+
+    <div class="category_horiz quiet">
+      <%= print_categories(@document) %>
+    </div>
+
+    <div class="samples" id="samples">
+      <ul>
+        <% @document.samples.by_position.each_with_index do |item, index| %>
+          <li><%= link_to "Örnek ##{index+1}", "#sample_#{item.id}" %></li>
+        <% end %>
+      </ul>
+        <%= render :partial => "sample", :collection => @document.samples.by_position %>
+    </div>
+
+  <% end %>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    //console.log('ready!');
+    $(function() {
+		  $( "#samples" ).tabs();
+	  });
+  });
+</script>

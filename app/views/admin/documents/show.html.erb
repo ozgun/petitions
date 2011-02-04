@@ -1,0 +1,60 @@
+<% if @document %>
+  <h2> 
+    <span>
+      <%= t('document.details') %>
+    </span>
+    <%= render "actions", :document => @document %>
+  </h2>
+
+  <table class="simple_table">
+    <tr>
+      <td class="lft">
+        <%= t('document.name') %>
+      </td>
+      <td class="rgt">
+        <%= h(@document.name) %>
+      </td>
+    </tr>
+    <tr>
+      <td class="lft">
+        <%= t('category.section') %>
+      </td>
+      <td class="rgt">
+        <%= Category.section(@document.section_identifier) %>
+      </td>
+    </tr>
+    <tr>
+      <td class="lft">
+        <%= t('category.categories') %>
+      </td>
+      <td class="rgt">
+        <%= h(@document.categories.map(&:name).join(', '))  %>
+      </td>
+    </tr>
+    <tr>
+      <td class="lft">
+        <%= t('is_published') %>
+      </td>
+      <td class="rgt">
+        <%= publish_status(@document.published) %>
+      </td>
+    </tr>
+    <tr>
+      <td class="lft">
+        <%= t('created_at') %>
+      </td>
+      <td class="rgt">
+        <%= @document.created_at.to_formatted_s(:year_month_day) %>
+      </td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <div class="samples">
+    <%= render "samples", :samples => @samples, :document => @document %>
+  </div>
+
+<% else %>
+  <%= t('not_found') %>
+<% end %>

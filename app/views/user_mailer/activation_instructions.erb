@@ -1,0 +1,11 @@
+Sayın <%= @user.full_name %>,
+
+Üyeliğiniz aktif hale getirmek için lütfen aşağıdaki linke tıklayınız.
+
+<%= url_for activate_url(@user.perishable_token) %>
+
+Eğer yukarıdaki link çalışmıyorsa, web tarayıcınızın adres alanına linki kopyalayınız.
+
+Saygılarımıza,
+
+<%= EMAIL_BANNER %>

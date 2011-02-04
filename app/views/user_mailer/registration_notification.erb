@@ -1,0 +1,12 @@
+Hi <%= @admin.full_name %>,
+
+You received this email because you are one of the Prolific Payment Solutions administrators. Please login and authorize the user: <%= login_url(:host => DEFAULT_HOST) %>
+
+Name: <%= @user.full_name %>
+Personal Email: <%= @user.personal_email %>
+Home Phone: <%= @user.home_phone || "Empty" %>
+Cell Phone: <%= @user.cell_phone || "Empty" %>
+Home Address: <%= @user.home_address %>
+Business Address: <%= @user.biz_address %>
+
+<%= EMAIL_BANNER %>

@@ -1,0 +1,8 @@
+if @item_deleted
+  #page << "$('#asset_#{params[:id]}').hide('blind');"
+  #page << "$('#asset_#{params[:id]}').hide('blind');"
+  page << "$('#asset_#{params[:id]}').remove();"
+  page.replace_html "asset_count", "#{@asset_count}"
+else
+  page.alert(escape_javascript(flash[:error]))
+end

@@ -1,0 +1,21 @@
+<tr id="page_<%= page.id%>" class="<%= cycle_row %>">
+  <td>
+    <%= link_to page.title, edit_admin_page_path(page) %>
+  </td>
+  <td>
+    <% if page.page_category %>
+      <%= page.page_category.name %>
+    <% else %>
+      <%= t('page_category.empty') %>
+    <% end %>
+  </td>
+  <td>
+    <%= page_status_icon(page.active) %>
+  </td>
+  <td>
+    <%= page.created_at %>
+  </td>
+  <td style="text-align: right">
+    <%= actions_with_icons(page, {:preview => true, :preview_link => page.url_preview, :edit => true}, "admin") %>
+  </td>
+</tr>

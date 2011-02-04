@@ -1,0 +1,27 @@
+<h3>
+  <%= t('sample.samples') %>
+  <div class="page_actions">
+    <%= link_to t('item.add', :item => t('sample.sample')), new_admin_document_sample_path(document) %>
+  </div>
+</h3>
+
+<% if samples.empty? %>
+
+  <%= link_to "Bu belge için örnek eklenmemiş, eklemek için tıklayınız", new_admin_document_sample_path(document) %>
+
+<% else %>
+
+  <table class="simple_grid">
+    <thead>
+      <tr>
+        <th class="w50"><%= t('sample.position') %></th>
+        <th class="w500"><%= t('asset.assets') %></th>
+        <th class="w80"></th>
+      </tr>
+    </thead>
+    <% samples.each do |sample| %>
+      <%= render "sample", :sample => sample %>
+    <% end %>
+  </table>
+
+<% end %>

@@ -1,0 +1,9 @@
+<div id="admin_menu" class="span-24">
+  <ul class="tabs">
+    <li><%= link_to t('document.all'), admin_documents_path %></li>
+    <li><%= link_to t('petitions'), admin_documents_path(:section => "dilekceler") %></li>
+    <li><%= link_to t('agreements'), admin_documents_path(:section => "sozlesmeler") %></li>
+    <li><%= link_to t('other_documents'), admin_documents_path(:section => "diger-yazismalar") %></li>
+  </ul>
+</div>
+<br />

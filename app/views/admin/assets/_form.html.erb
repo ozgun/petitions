@@ -1,0 +1,21 @@
+<div class="span-24">
+  <% form_for [:admin, asset], :html => {:multipart => true} do |f|  %>
+
+    <div class="span-24">
+      <%= f.error_messages %>
+    </div>
+
+    <div class="span-4"><%= f.label :description, t('asset.description') %></div>
+    <div class="span-20 last"><%= f.text_field :description %></div>
+
+    <div class="span-4"><%= f.label :tag, t('asset.tag') %></div>
+    <div class="span-20 last"><%= f.select :tag, Asset::TAGS, :include_blank => true %></div>
+
+    <div class="span-4"><%= f.label :metadata, t('select_file') %></div>
+    <div class="span-20 last"><%= f.file_field :metadata %>&nbsp;</div>
+    
+    <div class="span-4">&nbsp;</div>
+    <div class="span-20 last"><%= submit_tag t('save') %></div>
+
+  <% end %> 
+</div>

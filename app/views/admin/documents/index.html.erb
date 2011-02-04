@@ -1,0 +1,17 @@
+<h2>
+  <span>
+    <%= section_name(params[:section]) %>(<%= @document_count %>)
+  </span>
+  <div class="page_actions">
+    <%= link_to t('item.add', :item => t('petition')), new_admin_document_path(:section => Category::SECTIONS[0][1]) %> |
+    <%= link_to t('item.add', :item => t('agreement')), new_admin_document_path(:section => Category::SECTIONS[1][1]) %> |
+    <%= link_to t('item.add', :item => t('other_document')), new_admin_document_path(:section => Category::SECTIONS[2][1]) %>
+  </div>
+</h2>
+
+<%= will_paginate_custom(@documents) %>
+<table class="simple_grid">
+  <%= render "grid_headers" %>
+  <%= render @documents %>
+</table>
+<%= will_paginate_custom(@documents) %>

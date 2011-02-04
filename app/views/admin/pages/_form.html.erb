@@ -1,0 +1,86 @@
+<div class="span-24">
+  <% form_for [:admin, page], :html => {:multipart => true} do |f|  %>
+
+    <div class="span-24">
+      <%= f.error_messages %>
+    </div>
+
+    <% if !f.object.new_record? %>
+      <div id="help_ozel_urller" class="hide">
+        <%= render :partial => "admin/shared/help/settings/ozel_urller" %>
+      </div>
+      <div class="span-4">
+        <b><%= t('page.link') %></b>
+      </div>
+      <div class="span-20 last">
+        <%= link_to f.object.url, f.object.url, :target => "_blank" %>
+        <%= link_to_function image_tag("help.png"), "displayHelpDialog($('#help_ozel_urller'));" %>
+      </div>
+      <div class="span-4"><b><%= t('preview') %></b></div>
+      <div class="span-20 last">
+        <%= link_to f.object.url_preview, f.object.url_preview, :target => "_blank" %>
+      </div>
+
+    <% end %>
+
+    <div class="span-4"><%= f.label :active, t('active') %></div>
+    <div class="span-20 last"><%= f.check_box :active %>&nbsp; Bir sayfanın yayınlanabilmesi için aktif yapılması gerekmektedir.</div>
+
+    <div class="span-4"><%= f.label :title, t('page.title') %></div>
+    <div class="span-20 last"><%= f.text_field :title %></div>
+
+    <div class="span-4"><%= f.label :page_category_id, t('page_category.page_category') %></div>
+    <div class="span-20 last">
+      <%= f.select :page_category_id, page_categories.map {|pc| [pc.name, pc.id]}, :include_blank => true %>
+    </div>
+
+    <div class="span-4"><%= f.label :category_main_page, t('page.category_main_page') %></div>
+    <div class="span-20 last"><%= f.check_box :category_main_page %>&nbsp; NOT: Kategori ana sayfası sağ menüde gösterilmez. (Örnek: Mobil Reklam ana sayfası)</div>
+
+    <div class="span-4"><%= f.label :body, t('page.body') %></div>
+    <div class="span-20 last"><%= f.text_area :body, :class => "tinyMceEditor" %></div>
+
+    <div class="span-4"><%= f.label :banner_id, t('page.banner') %></div>
+    <div class="span-20 last">
+      <%= f.select :banner_id, Asset.tag_page_banner.map{|a| [a.metadata_file_name, a.id]}, :include_blank => true %>&nbsp;
+      <%= link_to t('asset.new'), new_admin_asset_path, :target => "_blank" %>
+      (Bu listede etiketi "<b>sayfa-banner</b>" olan resimler listelenir)
+    </div>
+
+    <% unless f.object.new_record? %>
+      <div class="span-4">&nbsp;</div>
+      <div class="span-20 last"><%= image_tag(f.object.banner.metadata.url) if f.object.banner %>&nbsp;</div>
+    <% end %>
+
+    <div class="span-4"><%= f.label :slogan, t('page.slogan') %></div>
+    <div class="span-20 last"><%= f.text_area :slogan, :class => "text_area_small" %>  (HTML tag'leri kullanılabilir)</div>
+
+    <div class="span-4"><%= f.label :icon_id, t('page.icon') %></div>
+    <div class="span-20 last">
+      <%= f.select :icon_id, Asset.tag_page_icon.map{|a| [a.metadata_file_name, a.id]}, :include_blank => true %>
+      <%= link_to t('asset.new'), new_admin_asset_path, :target => "_blank" %>
+      (Bu listede etiketi "<b>sayfa-ikon</b>" olan resimler listelenir)
+    </div>
+    <% unless f.object.new_record? %>
+      <div class="span-4">&nbsp;</div>
+      <div class="span-20 last"><%= image_tag(f.object.icon.metadata.url) if f.object.icon %>&nbsp;</div>
+    <% end %>
+
+
+    <div class="span-4"><%= f.label :contact_form_id, t('contact_form.form') %></div>
+    <div class="span-20 last">
+      <%= f.select :contact_form_id, ContactForm.ascend_by_title.map {|item| [item.title, item.id]}, :include_blank => true %>
+      <%= link_to t('contact_form.new'), new_admin_contact_form_path, :target => "_blank" %>
+    </div>
+
+    <div class="span-4"><%= f.label :position, t('page.position') %></div>
+    <div class="span-20 last"><%= f.text_field :position %>  <%= t('page.position_desc') %> (1,2,3..)</div>
+
+
+    <div class="span-24 last">&nbsp;</div>
+    
+    <div class="span-4">&nbsp;</div>
+    <div class="span-20 last"><%= submit_tag t('save') %></div>
+
+  <% end %> 
+</div>

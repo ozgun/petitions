@@ -1,0 +1,57 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jquery.ui.tabs.min" %>
+<% end %>
+<% if @user %>
+  <%= page_title @user.full_name %>
+
+  <div class="item_action_links">
+    <%= actions_with_icons(@user, default_actions_opt, "admin") %>
+  </div>
+
+  <% if false %>
+    <script type="text/javascript">
+	  $(function() {
+	  	$("#user_tabs").tabs();
+	  });
+	  </script>
+
+  <div id="user_tabs">
+    <ul class="jtabs">
+		  <li><a href="#tab1"><%= t('user.account_info') %></a></li>
+		  <li><a href="#tab2"><%= t('user.login_stats') %></a></li>
+	  </ul>
+
+    <div id="tab1">
+     içerik 1 
+    </div>
+
+    <div id="tab2">
+      içerik 2 
+    </div>
+  </div>
+  <% end %>
+
+  <div id="user_account_info_container">
+    <%= render :partial => "account_info", :locals => {:user => @user} %>
+  </div>
+
+  <div id="user_login_stats_container">
+    <%= render :partial => "login_stats", :locals => {:user => @user} %>
+  </div>
+
+  <div id="user_google_account_container">
+    <%= render :partial => "google_account", :locals => {:user => @user} %>
+  </div>
+
+  <div id="user_facebook_account_container">
+    <%= render :partial => "facebook_account", :locals => {:user => @user} %>
+  </div>
+
+  <div id="user_mynet_account_container">
+    <%= render :partial => "mynet_account", :locals => {:user => @user} %>
+  </div>
+
+
+<% else %>
+  <%= t('user.not_found') %>
+<% end %>

@@ -1,0 +1,9 @@
+<%= link_to t('home_page'), root_path %> |
+<%= link_to t('petitions'), petitions_path %> |
+<%= link_to t('agreements'), agreements_path %> |
+<%= link_to t('other_documents'), petitions_path %>
+<% if admin? %>
+  | <%= link_to "Yönetim Paneli", admin_home_path %>
+<% end %>
+<br />
+© 2011

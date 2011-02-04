@@ -1,0 +1,21 @@
+<thead>
+  <tr>
+    <th style="width: 400px">
+      <%= order search, :by => :title, :as => t('page.title') %>
+    </th>
+    <th style="width: 150px">
+      <%# FIXME: Yazıları listelerken 'order' helper methodunu kullanıldığında, kategori ile ilişkilendirlmemiş yazıları sorguya dahil edilmiyor. %>
+      <%#= order search, :by => :page_category_name, :as => t('page_category.name') %>
+      <%= t('page_category.name') %>
+    </th>
+    <th style="width: 125px">
+      <%= order search, :by => :active, :as => t('status') %>
+    </th>
+    <th style="width: 125px; ">
+      <%= order search, :by => :created_at, :as => t('created_at') %>
+    </th>
+    <th>
+     &nbsp; 
+    </th>
+  </tr>
+</thead>

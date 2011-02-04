@@ -1,0 +1,16 @@
+<tr class="sample <%= cycle_row %>" id="sampe_<%= sample.id %>">
+  <td class="w50">
+    <%= sample.position || "" %>
+  </td>
+  <td class="w500">
+    <% sample.assets.each do |asset| %>
+      <%= link_to asset.file_name, asset.url %>
+    <% end %>
+    
+  </td>
+  <td class="actions">
+    <%= link_to show_icon, document_path_by_section(sample.document) %>
+    <%= link_to edit_icon, edit_admin_document_sample_path(sample.document, sample) %>
+    <%= link_to delete_icon, admin_document_sample_path(sample.document, sample), :method => :delete, :confirm => t('are_you_sure_delete') %>
+  </td>
+</tr>

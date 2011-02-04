@@ -1,0 +1,10 @@
+<div class="span-12">
+  <h1>
+    Yönetim Paneli
+  </h1>
+</div>
+<div class="span-12 last admin_bar">
+  <%= link_to current_user.email, admin_user_path(current_user) %> | 
+  <%= link_to t('auth.logout'), logout_path %> |
+  <%= link_to t('admin_menu.site'), root_path %>
+</div>

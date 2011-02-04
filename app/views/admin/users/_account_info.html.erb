@@ -1,0 +1,62 @@
+<div class="table_title">
+  <%= t('user.account_info') %>
+</div>
+<table class="item_table">
+
+  <tr>
+    <th><%= t('role') %></th>
+    <td><%= user.role_desc %></td>
+  </tr>
+
+  <tr>
+    <th><%= t('email') %></th>
+    <td><%= h(user.email) %></td>
+  </tr>
+
+  <tr>
+    <th><%= t('user.company_name') %></th>
+    <td><%= h(user.company_name) %></td>
+  </tr>
+
+  <tr>
+    <th><%= t('user.phone') %></th>
+    <td><%= h(user.phone) %></td>
+  </tr>
+
+  <tr>
+    <th><%= t('user.gsm_no') %></th>
+    <td><%= h(user.gsm_no) %></td>
+  </tr>
+
+  <tr>
+    <th><%= t('user.website') %></th>
+    <td><%= h(user.website) %></td>
+  </tr>
+
+  <tr>
+    <th><%= t('user.address') %></th>
+    <td><%= h(simple_format(user.address)) %></td>
+  </tr>
+
+  <% if false %>
+    <%# Kullanıcılar paket alırken hesap oluşturulduğu için buna şimdilik gerek yok. %>
+    <tr>
+      <th><%= t('user.activation_status') %>?</th>
+      <td><%= activation_status_icon(user) %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <th><%= t('user.suspension_status') %>?</th>
+    <td>
+      <%= suspension_status_icon(user) %>
+      [<%= suspension_status_update_link(user) %>]
+    </td>
+  </tr>
+
+  <tr>
+    <th><%= t('registration_date') %></th>
+    <td><%= user.created_at %></td>
+  </tr>
+
+</table>

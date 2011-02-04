@@ -1,0 +1,9 @@
+<tr class="<%= cycle_row %>">
+  <td><%= publish_status(document.published) %></td>
+  <td><%= link_to truncate(h(document.name), :length => 75), admin_document_path(document) %></td>
+  <td><%= h(document.categories.map(&:name).join(', ')) %></td>
+  <td><%= document.created_at.to_formatted_s(:year_month_day) %></td>
+  <td class="actions">
+    <%= actions_with_icons(document, default_actions_opt, "admin") %>
+  </td>
+</tr>

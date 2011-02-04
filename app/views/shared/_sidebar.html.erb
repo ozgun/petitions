@@ -1,0 +1,52 @@
+<% petitions = Category.petitions %>
+<% agreements = Category.agreements %>
+<% other_documents = Category.other_documents %>
+<div class="append-1">
+
+  <div class="dilekceler">
+    <h3 class="caps"><%= link_to t('petitions').upcase_tr!, petitions_path %></h3>  
+    <div class="box">  
+      <ul>
+      <% petitions.each do |item| %>
+        <li>
+        <%= link_to item.name, petition_category_path(:category_permalink => item.permalink), :class => "quiet" %>
+        </li>
+      <% end %>
+      </ul>
+    </div>  
+  </div>
+  
+  <div class="sozlesmeler">
+    <h3 class="caps"><%= link_to t('agreements').upcase_tr!, agreements_path %></h3>  
+    <div class="box">  
+      <ul>
+      <% agreements.each do |item| %>
+        <li>
+          <%= link_to item.name, agreement_category_path(:category_permalink => item.permalink), :class => "quiet" %>
+        </li>
+      <% end %>
+      </ul>
+    </div>  
+  </div>
+  
+  <div class="diger-yazismalar">
+    <h3 class="caps"><%= link_to t('other_documents').upcase_tr!, other_documents_path %></h3>  
+    <div class="box">  
+      <ul>
+      <% other_documents.each do |item| %>
+        <li>
+          <%= link_to item.name, other_document_category_path(:category_permalink => item.permalink), :class => "quiet" %>
+        </li>
+      <% end %>
+      </ul>
+    </div>  
+  </div>
+  
+  <div id="banners">
+    <h3 class="caps"><%= t('links').upcase_tr! %></h3>  
+    <div class="box">  
+      <%= link_to "halkinavukati.com", "http://halkinavukati.com", :target => "_blank", :class => "quiet" %>
+    </div>  
+  </div>
+
+</div>

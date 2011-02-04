@@ -1,0 +1,17 @@
+<% initiate_tiny_mce %>
+<% if @page %>
+  <%= page_title h(@page.title || "") %>
+
+  <div class="action_links">
+    <%= actions_with_icons(@page, {:new => true, :show => true, :edit => true, :delete => true}, "admin") %>
+  </div>
+
+  <div class="span-24">
+    <%= render :partial => "form", :locals => {:page => @page, :page_categories => @page_categories} %>
+  </div>
+
+  <br />
+
+<% else %>
+  <%= t('page.not_found') %>
+<% end %>

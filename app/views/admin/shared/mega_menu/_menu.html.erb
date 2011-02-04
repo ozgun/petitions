@@ -1,0 +1,154 @@
+<script>
+$(document).ready(function(){
+	$('#mega_menu ul li').hover(
+		function () {
+      //console.log($('div', this));
+			//$('div', this).slideDown(200);
+			$('div', this).show();
+
+		}, 
+		function () {
+			//$('div', this).slideUp(200);			
+			$('div', this).hide();			
+		}
+	);
+});
+</script>
+
+<div id="mega_menu">
+	<ul>
+		<li><%= link_to t('admin_menu.home'), admin_home_path %>
+    <!--
+			<div>
+				<ul>
+					<li>Ana Sayfa 1</li>
+					<li>Ana Sayfa 4</li>
+				</ul>
+				<ul>
+					<li>Ana Sayfa 7</li>
+					<li>Ana Sayfa 8</li>
+				</ul>
+			</div>
+      -->
+		</li>
+		<li><%= link_to t('admin_menu.products'), admin_products_path %>
+			<div>
+				<ul>
+          <li >
+            <%= link_to image_tag("add.png"), new_admin_product_path %>
+            <%= link_to t('product.new'), new_admin_product_path %>
+          </li>
+				</ul>
+			</div>
+		</li>
+		<li><%= link_to t('admin_menu.orders'), admin_orders_path %>
+    <!--
+			<div>
+				<ul>
+					<li>Ýletiþim 1</li>
+					<li>Ýletiþim 4</li>
+				</ul>
+				<ul>
+					<li>Ýletiþim 7</li>
+					<li>Ýletiþim 8</li>
+				</ul>
+			</div>
+      -->
+		</li>
+		<li><%= link_to t('admin_menu.users'), admin_users_path %>
+			<div>
+				<ul>
+          <li>
+            <%= link_to image_tag("add.png"), new_admin_user_path %>
+            <%= link_to t('item.new', :item => t('user.user')), new_admin_user_path %>
+          </li>
+				</ul>
+			</div>
+    <!--
+			<div>
+				<ul>
+					<li>Ürünler 1</li>
+					<li>Ürünler 2</li>
+				</ul>
+				<ul>
+					<li>Ürünler 5</li>
+				</ul>
+			</div>
+      -->
+		</li>
+		<li><%= link_to t('admin_menu.cms'), admin_cms_path %>
+			<div>
+				<ul>
+					<li><%= link_to t('asset.upload'), new_admin_asset_path %></li>
+					<li><%= link_to t('asset.list'), admin_assets_path %></li>
+					<li><%= link_to "#{t('js_css_edit')}", admin_static_files_path %></li>
+				</ul>
+				<ul>
+          <li><%= link_to t('page.pages'), admin_pages_path %></li>
+          <li><%= link_to t('product_page.pages'), admin_product_pages_path %></li>
+          <li><%= link_to t('main_page.main_page'), edit_admin_home_page_path %></li>
+				</ul>
+        <ul>
+          <li><%= link_to t('contact_form.forms'), admin_contact_forms_path %></li>
+          <li><%= link_to t('client.clients'), admin_clients_path %></li>
+        </ul>
+			</div>
+		</li>
+		<li><%= link_to t('admin_menu.blog'), admin_posts_path %>
+			<div>
+				<ul>
+          <li>
+            <%= link_to image_tag("add.png"), new_admin_post_path %>
+            <%= link_to t('post.new'), new_admin_post_path %>
+          </li>
+				</ul>
+			</div>
+		</li>
+		<li><%= link_to t('admin_menu.faq'), admin_questions_path %>
+    <!--
+			<div>
+				<ul>
+					<li>Ýletiþim 1</li>
+					<li>Ýletiþim 4</li>
+				</ul>
+				<ul>
+					<li>Ýletiþim 7</li>
+					<li>Ýletiþim 8</li>
+				</ul>
+			</div>
+      -->
+		</li>
+		<li><%= link_to t('admin_menu.messages'), admin_contact_form_data_path %>
+    <!--
+			<div>
+				<ul>
+					<li>Ýletiþim 1</li>
+					<li>Ýletiþim 4</li>
+				</ul>
+				<ul>
+					<li>Ýletiþim 7</li>
+					<li>Ýletiþim 8</li>
+				</ul>
+			</div>
+      -->
+		</li>
+		<li><%= link_to t('admin_menu.settings'), admin_settings_path %>
+			<div>
+				<ul>
+          <li><%= link_to t('setting.bank_info'), admin_settings_path %></li>
+          <li><%= link_to t('setting.admin_emails'), admin_settings_path %></li>
+				</ul>
+				<ul>
+          <li><%= link_to t('setting.main_menu'), admin_settings_path %></li>
+          <li><%= link_to t('setting.footer'), admin_settings_path %></li>
+				</ul>
+				<ul>
+          <li><%= link_to t('setting.meta_tags'), admin_settings_path %></li>
+          <li><%= link_to t('setting.ga_code'), admin_settings_path %></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
+
+

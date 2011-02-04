@@ -1,0 +1,13 @@
+<h2>
+  <span>
+    <%= t('item.edit', :item => t('document.document')) %>
+  </span>
+  <%= render "actions", :document => @document %>
+</h2>
+
+<% form_for([:admin, @document]) do |f| %>
+  <%= f.error_messages %>
+  <table class="simple_table">
+    <%= render "form", :f => f %>
+  </table>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="sample" id="sample_<%= sample.id %>">
+  <div class="assets">
+    <b>Dosyalar: </b>
+    <% sample.assets.each do |asset| %>
+      <span class="asset" id="asset_<%= asset.id %>">
+        <%= link_to asset.file_name, asset_path(:id => asset.id, :sid => asset.sample.id) %>
+      </span>
+    <% end %>
+  </div>
+  <div class="html_format">
+    <%= sample.html %>
+  </div>
+</div>

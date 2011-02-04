@@ -1,0 +1,25 @@
+<thead>
+  <tr>
+    <th style="width: 300px">
+      <%= order search, :by => :metadata_file_name, :as => t('asset.link') %>
+    </th>
+    <th style="width: 150px">
+      <%= order search, :by => :description, :as => t('asset.description') %>
+    </th>
+    <th style="width: 100px">
+      <%= order search, :by => :tag, :as => t('asset.tag') %>
+    </th>
+    <th style="width: 100px">
+      <%= order search, :by => :metadata_content_type, :as => t('asset.content_type') %>
+    </th>
+    <th style="width: 100px">
+      <%= order search, :by => :metadata_file_size, :as => t('asset.file_size') %>
+    </th>
+    <th style="width: 125px; ">
+      <%= order search, :by => :created_at, :as => t('asset.created_at') %>
+    </th>
+    <th>
+     &nbsp; 
+    </th>
+  </tr>
+</thead>

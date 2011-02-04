@@ -1,0 +1,20 @@
+<h2><%= t('item.new', :item => t('sample.sample')) %></h2>
+
+<% if @document %>
+
+  <h3>
+    <%= link_to @document.name, admin_document_path(@document) %>
+  </h3>
+  
+    <% form_for(:sample, @sample, 
+                :url => admin_document_samples_path(:document_id => @document.id), 
+                :html => {:method => :post, :multipart => true}) do |f| %>
+    <%= f.error_messages %>
+    <table class="simple_table">
+      <%= render "form", :f => f, :document => @document %>
+    </table>
+  <% end %>
+
+<% else %>
+  <%= t('not_found') %>
+<% end %>

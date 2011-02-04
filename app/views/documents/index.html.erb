@@ -1,0 +1,13 @@
+<h2 class="title">
+  <%= title_with_category(@category) %>
+</h2>
+
+<div class="page_container">
+
+  <div class="documents">
+    <%= render @documents %>
+  </div>
+  
+  <%= render "shared/pagination", :records => @documents %>
+
+</div>

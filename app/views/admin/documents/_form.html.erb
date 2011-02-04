@@ -1,0 +1,44 @@
+<tr>
+  <td class="lft">
+    <%= f.label :name, mandatory_field(t('document.name')) %>
+  </td>
+  <td class="rgt">
+    <%= f.text_field :name, :size => 70 %>
+  </td>
+</tr>
+
+<tr>
+  <td class="lft">
+    <%= f.label :published, t('document.is_publish') %>
+  </td>
+  <td class="rgt">
+    <%= f.check_box :published %>
+  </td>
+</tr>
+
+<tr>
+  <td class="lft">
+    <%= f.label :section_identifier, t('category.section') %>
+  </td>
+  <td class="rgt">
+    <% if f.object.new_record? %>
+      <%= f.hidden_field :section_identifier %>
+    <% end %>
+    <%= h_ext(Category.section(f.object.section_identifier)) %>
+  </td>
+</tr>
+
+<tr>
+  <td class="lft">
+    <%= f.label :categories, t('category.categories') %>
+  </td>
+  <td class="rgt">
+    <%= render "category_fields", :f => f, :categories => @categories %>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2" class="submit">
+    <%= f.submit t('save') %>
+  </td>
+</tr>

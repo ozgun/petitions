@@ -1,0 +1,53 @@
+<%= page_title "#{t('page.pages')} (<span id=\"page_count\">#{@page_count}</span>)" %>
+
+<div class="span-24 last">
+  <div class="span-14">
+    <%= render :partial => "search", :locals => {:search => @search} %>
+  </div>
+  <div class="span-10 last tright sub_menu_container">
+    <ul class="sub_menu">
+      <li>
+        <%= link_to image_tag("add.png"), new_admin_page_path %>
+        <%= link_to t('page.new'), new_admin_page_path %>
+      </li>
+      <li>
+    <%= link_to_function image_tag("add.png"), "$('#new_page_category_form_container').toggle('blind');" %>
+    <%= link_to_function t('page_category.new'), "$('#new_page_category_form_container').toggle('blind');" %>
+      </li>
+      
+      <li>
+    
+    <%= link_to_function image_tag("categories.png"), "$('#page_categories_container').toggle('blind');" %>
+    <%= link_to_function t('page_category.page_categories'), "$('#page_categories_container').toggle('blind');" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="new_page_category_form_container" class="slidedown_form span-24 last">
+  <%= render :partial => "/admin/page_categories/form", :locals => {:page_category => PageCategory.new} %>
+</div>
+
+<div id="page_categories_container" class="slidedown_form span-24 last">
+  <%= render :partial => "/admin/page_categories/page_categories", :locals => {:page_categories => PageCategory.ascend_by_name} %>
+</div>
+
+<hr />
+
+<div id="pages_container">
+
+  <% unless @pages.empty? %>
+    <table class="grid_table">
+      <%= render :partial => "table_headers", :locals => {:search => @search} %>
+      <tbody>
+        <%= render :partial => @pages %>
+      </tbody>
+    </table>
+  <% else %>
+    <%= t('page.not_found') %>
+  <% end %>
+</div>
+
+<div class="pagination">
+  <%= will_paginate_custom @pages %>
+</div>

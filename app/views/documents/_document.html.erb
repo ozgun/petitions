@@ -1,0 +1,8 @@
+<div class="document" id="document_<%= document.id %>">
+  <div>
+    <%= link_to h(document.name), document_path_by_section(document) %>
+  </div>
+  <div class="document_category quiet">
+    <%= print_categories(document) %>
+  </div>
+</div>

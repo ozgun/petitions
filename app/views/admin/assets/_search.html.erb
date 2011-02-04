@@ -1,0 +1,18 @@
+<div>
+  <% form_for search do |f| %>
+    <%= f.label :description_like, t('asset.description') %>
+    <%= f.text_field :description_like, :class => "text_field_small"  %>
+
+    <%= f.label :metadata_file_name_like, t('asset.name') %>
+    <%= f.text_field :metadata_file_name_like, :class => "text_field_small"  %>
+
+    <%= f.label :tag_like, t('asset.tag') %>
+    <%= f.text_field :tag_like, :class => "text_field_small"  %>
+
+    <%= f.label :metadata_content_type_like, t('asset.content_type') %>
+    <%= f.text_field :metadata_content_type_like, :class => "text_field_small"  %>
+
+    <%= submit_tag t('do_search') %>
+
+  <% end %>
+</div>

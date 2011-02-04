@@ -1,0 +1,111 @@
+<table class="form_table">
+  <caption colspan="2"><%= t('user.account_info') %></caption>
+
+  <tr>
+    <td style="width: 200px"><%= f.label :email, mandatory_field(t('email')) %></td>
+    <td>
+      <%= f.text_field :email %>
+      <%= f.error_message_on :email %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :first_name, mandatory_field(t('first_name')) %></td>
+    <td>
+      <%= f.text_field :first_name %>
+      <%= f.error_message_on :first_name %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :last_name, mandatory_field(t('last_name')) %></td>
+    <td>
+      <%= f.text_field :last_name %>
+      <%= f.error_message_on :last_name %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :company_name, t('user.company_name') %></td>
+    <td>
+      <%= f.text_field :company_name %>
+      <%= f.error_message_on :company_name %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :phone, mandatory_field(t('user.phone')) %></td>
+    <td>
+      <%= f.text_field :phone %>
+      <%= f.error_message_on :phone %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :gsm_no, mandatory_field(t('user.gsm_no')) %></td>
+    <td>
+      <%= f.text_field :gsm_no %>
+      <%= f.error_message_on :gsm_no %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :website, mandatory_field(t('user.website')) %></td>
+    <td>
+      <%= f.text_field :website %>
+      <%= f.error_message_on :website %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :address, mandatory_field(t('user.address')) %></td>
+    <td>
+      <%= f.text_area :address, :class => "text_area2"  %>
+      <%= f.error_message_on :address %>
+    </td>
+  </tr>
+
+  <% if !f.object.new_record? %>
+
+    <% if false %>
+      <%# Kullanıcılar paket alırken hesap oluşturulduğu için buna şimdilik gerek yok. %>
+      <tr>
+        <td><%= label_tag t('user.activation_status') %>?</td>
+        <td><%= activation_status_icon(f.object) %></td>
+      </tr>
+    <% end %>
+
+    <tr>
+      <td><%= label_tag t('user.suspension_status') %>?</td>
+      <td>
+        <%= suspension_status_icon(f.object) %>
+        [<%= suspension_status_update_link(f.object) %>]
+      </td>
+    </tr>
+
+  <% end %>
+
+  <tr>
+    <td><%= label :password, t('auth.password') %></td>
+    <td>
+      <%= f.password_field :password %> 
+      <% if !f.object.new_record? %>
+        <%= t('auth.password_opt') %>
+      <% end %>
+      <%= f.error_message_on :password %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><%= label :password_confirmation, t('auth.password_confirmation') %></td>
+    <td>
+      <%= f.password_field :password_confirmation %>
+      <%= f.error_message_on :password_confirmation %>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="submit_button" colspan="2"><%= submit_tag t('save') %></td>
+  </tr>
+  
+</table>
